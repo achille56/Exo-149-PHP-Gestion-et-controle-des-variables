@@ -7,7 +7,11 @@
  */
 $var = 0;
 // TODO votre code ici.
-
+if (empty($var)) {
+    echo "vide";
+} else {
+    echo "pas vide";
+}
 
 
 
@@ -16,20 +20,22 @@ $var = 0;
  */
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
-
+unset($eraseMe);
+print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
-
+$array = ["julie", "thomas", "raoul", "jerome", "angelique"];
+var_dump($array);
 echo "<br>";
 
 /**
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
-
+print_r($array);
 echo "<br>";
 
 
@@ -39,7 +45,12 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
-
+if (isset($tab['test'])) {
+    echo "Existe";
+}
+else {
+    echo "Existe pas";
+}
 
 /**
  * 6. Créez une variable contenant:
@@ -63,3 +74,35 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+$booleen = true;
+$entier = 42;
+$flottant = 3.14;
+$chaine = "Bonjour";
+
+function type ($simpleVar) {
+
+}
+function typeP($simpleVar) {
+    if(is_bool($simpleVar)){
+        echo "La variable passée en paramètre est de type: boolean";
+    }
+    elseif(is_int($simpleVar)){
+        echo "La variable passée en paramètre est de type: nombre entier";
+    }
+    elseif(is_float($simpleVar)){
+        echo "La variable passée en paramètre est de type: nombre flottant";
+    }
+    elseif(is_string($simpleVar)){
+        echo "La variable passée en paramètre est de type: chaine de caractères";
+    }
+    else {
+        echo "La variable passée en paramètre est de type: inconnue";
+    }
+}
+typeP($booleen);
+echo "<br><br>";
+typeP($entier);
+echo "<br><br>";
+typeP($flottant);
+echo "<br><br>";
+typeP($chaine);
